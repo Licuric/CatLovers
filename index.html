@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="utf-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<meta name="description" content="Your description">
+<meta name="keywords" content="Your keywords">
+<meta name="author" content="Your name">
+<meta name = "format-detection" content = "telephone=no" />
+<!--CSS-->
+<link rel="stylesheet" href="css/bootstrap.css" >
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/stuck.css">
+<link rel="stylesheet" href="css/camera.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="fonts/font-awesome.css">
+<!--JS-->
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.mobilemenu.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script src="js/jquery.equalheights.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/tmstickup.js"></script>
+<script src="js/TMForm.js"></script>
+<script>
+    $(document).ready(function(){
+       
+        var $owl = $("#owl"),
+            $camera = $('#camera_wrap');
+       /* carousel */
+        $owl.owlCarousel({
+            items : 4, //10 items above 1220px browser width
+            itemsDesktop : [1219,4], //5 items between 1219px and 992px
+            itemsDesktopSmall : [991, 3], // betweem 991 and 768px
+            itemsTablet: [767, 3], //2 items between 767 and 0
+            itemsMobile : [560, 2], // itemsMobile disabled - inherit from itemsTablet option
+            navigation : true,
+            pagination :  false
+        });
+       
+       $camera.camera({
+            loader: false,
+            pagination: true,
+            minHeight: '316',
+            thumbnails: false,
+            caption: true,
+            navigation: false,
+            time: 4000,
+            onStartTransition:function(){
+              var ind = $camera.find('.camera_pag_ul>li.cameracurrent').index();
+              (ind < 0)&&(ind = 0);
+
+              $('.item', $owl)
+                .removeClass('active')
+                .eq(ind).addClass('active');
+
+              $owl
+                .data('owlCarousel')
+                .goTo(ind);
+            }
+          });
+          
+        $owl.find('.item a').click(function(){
+          var $this = $(this),
+              ind = $this.parents('.owl-item').index();
+          $('.camera_pag_ul>li').eq(ind).click();
+          return false;
+        })
+     }); 
+</script>
+<script>
+$(window).load(function() { 	;
+    $('#tab_preview a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })			
+});
+</script>
+      <script src="js/jquery.mobile.customized.min.js"></script>
+
+</head>
+<body>
+<!--header-->
+<header>
+    <div id="stuck_container">
+        <section class="menuBox">
+            <div class="container">
+                <div class="row">
+                    <article class="col-lg-12 col-md-12 col-sm-12">
+                        <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img src="img/logo.png" alt=""></a></h1>
+                        <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
+                        	<ul class="nav sf-menu clearfix">
+                        		<li class="active"><a href="index.html">Acasa</a></li>
+                        		<li class="sub-menu"><a href="index-1.html">Despre noi<span></span></a>
+                                    <ul class="submenu">
+                        				<li><a href="#">Echipa</a></li>
+                        				<li><a href="#">Istoria<span></span></a>
+                        				</li>
+                        				<li><a href="#">FAQs</a></li>
+                        			</ul>
+                                </li>
+                        		<li><a href="index-2.html">Servicii</a></li>
+                                <li><a href="index-4.html">Contacte</a></li>
+                        	</ul>
+                        </nav>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</header>
+<div class="global">
+    <section class="slider">
+        <div id="camera_wrap">
+            <div data-src="../img/picture1.jpg"><div class="camera-caption fadeIn"><p class="title">Un ghid complet<br>care te ajuta sa iti arati afectiunea <br>fata de mica ta felina</p></div></div>
+            <div data-src="img/picture2.jpg"><div class="camera-caption fadeIn"><p class="title">Un ghid complet<br>care te ajuta sa iti arati afectiunea <br>fata de mica ta felina</p></div></div>
+            <div data-src="img/picture3.jpg"><div class="camera-caption fadeIn"><p class="title">Un ghid complet<br>care te ajuta sa iti arati afectiunea <br>fata de mica ta felina</p></div></div>
+            <div data-src="img/picture4.jpg"><div class="camera-caption fadeIn"><p class="title">Un ghid complet<br>care te ajuta sa iti arati afectiunea <br>fata de mica ta felina</p></div></div>
+            
+            <div data-src="img/picture1.jpg"><div class="camera-caption fadeIn"><p class="title">Un ghid complet<br>care te ajuta sa iti arati afectiunea <br>fata de mica ta felina</p></div></div>
+            <div data-src="img/picture2.jpg"><div class="camera-caption fadeIn"><p class="title">Un ghid complet<br>care te ajuta sa iti arati afectiunea <br>fata de mica ta felina</p></div></div>
+            <div data-src="img/picture3.jpg"><div class="camera-caption fadeIn"><p class="title">Un ghid complet<br>care te ajuta sa iti arati afectiunea <br>fata de mica ta felina</p></div></div>
+            <div data-src="img/picture4.jpg"><div class="camera-caption fadeIn"><p class="title">Un ghid complet<br>care te ajuta sa iti arati afectiunea <br>fata de mica ta felina</p></div></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <section class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+                    <article class="thumbs">
+                        <div class="car_div">
+                            <div id="owl">
+                                <div class="item active"><a href="#"><em></em><img src="img/thumb1.jpg" alt=""></a></div>
+                                <div class="item"><a href="#"><em></em><img src="img/thumb2.jpg" alt=""></a></div>
+                                <div class="item"><a href="#"><em></em><img src="img/thumb3.jpg" alt=""></a></div>
+                                <div class="item"><a href="#"><em></em><img src="img/thumb4.jpg" alt=""></a></div>
+                                
+                                <div class="item"><a href="#"><em></em><img src="img/thumb1.jpg" alt=""></a></div>
+                                <div class="item"><a href="#"><em></em><img src="img/thumb2.jpg" alt=""></a></div>
+                                <div class="item"><a href="#"><em></em><img src="img/thumb3.jpg" alt=""></a></div>
+                                <div class="item"><a href="#"><em></em><img src="img/thumb4.jpg" alt=""></a></div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>   
+        </div>
+    </section>
+    <section class="about-box">
+        <div class="container">
+            <div class="row">  
+                <article class="col-lg-12">
+                    <h2>Bine ai venit!</h2>
+                </article>
+            </div>
+        </div>
+    </section>
+     <div class="container">
+        <div class="row">       
+            <article class="col-lg-12">
+                    <ul class="nav nav-tabs" id="tab_preview">
+                        <li class="active"><a href="#section_1">Sanatate</a></li>
+                        <li><a href="#section_2">Nutritie</a></li>
+                        <li><a href="#section_3">Comportament</a></li>
+                    </ul>
+                    <div class="tab-content"> 
+                        <div class="tab-pane active" id="section_1">
+                            <div class="row">
+                                <article class="col-lg-6 col-md-6 col-sm-6">
+                                    <div>
+                                        <br></br>
+                                        <p>Dar nu uita, chiar dacă pisoiul tău nu-ți mai încape în palmă, este totuși un pisoi și sistemul său digestiv este sensibil, așa că are nevoie de o hrană specifică, ușor de digerat, pentru a-i susține creșterea și dezvoltarea, fără a-i perturba sistemul digestiv.</p>
+                                        <a href="#" class="btn-default btn1">More Info</a>
+                                    </div>
+                                </article>
+                                <article class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="row">
+                                        <article class="col-lg-3 col-md-3 col-sm-6">
+                                            <div>
+                                                <div >
+                                                    <br></br>
+                                                    <video controls autoplay muted loop src="site/video/cat.mp4" width="600" right="120" alt="">
+                                                    </video>
+                                                    <div class="caption">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="section_2">
+                            <div class="row">
+                                <article class="col-lg-6 col-md-6 col-sm-6">
+                                    <div>
+                                        <br></br>
+                                        <p>Pe măsură ce devin mai independenți, pisoii încep să învețe și să exploreze mai mult, iar acum începe etapa dezvoltării abilităților sociale! Cu toate aceste schimbări, laptele nu îi va mai oferi pisoiului tău suficientă energie și nutrienții necesari pentru a susține noul comportament. Puiul tău de pisică va trebui să facă trecerea gradual către hrana uscată ROYAL CANIN® Mother & Babycat și hrana umedă ROYAL CANIN® Mother & Babycat mousse, primele sale formule de hrană solidă, bogate în energie și nutrienți.</p>
+                                        <a href="#" class="btn-default btn1">More Info</a>
+                                    </div>
+                                </article>
+                                <article class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="row">
+                                        <article class="col-lg-3 col-md-3 col-sm-6">
+                                            <div>
+                                                <div >
+                                                    <br></br>
+                                                    <video controls autoplay muted loop src="site/video/cat.mp4" width="600" right="120" alt="">
+                                                    </video>
+                                                    <div class="caption">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="section_3">
+                            <div class="row">
+                                <article class="col-lg-6 col-md-6 col-sm-6">
+                                    <div>
+                                        <br></br>
+                                        <p>Începând cu a opta săptămână de viață, pisoiul tău va atinge apogeul poftei sale de joacă, pe măsură ce începe să alerge și să se cațăre. Este o perioadă esențială pentru dezvoltarea celei mai impresionante abilități ale sale - menținerea echilibrului, fără efort, pe orice traseu. Pentru aceasta are nevoie de o hrană care susține funcția vederii, dezvoltarea cognitivă și musculară.</p>
+                                        <a href="#" class="btn-default btn1">More Info</a>
+                                    </div>
+                                </article>
+                                <article class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="row">
+                                        <article class="col-lg-3 col-md-3 col-sm-6">
+                                            <div>
+                                                <div >
+                                                    <br></br>
+                                                    <video controls autoplay muted loop src="site/video/cat.mp4" width="600" right="120" alt="">
+                                                    </video>
+                                                    <div class="caption">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                
+            </article>
+            </div>
+        </div>
+        <section class="cats-box">
+            <div class="container">
+                <div class="row">  
+                    <article class="col-lg-3 col-md-3 col-sm-12">
+                        <h2>Ghemotoace de blana pentru adoptie</h2>
+                        <p>Daca doresti sa le oferi un camin, si o companie placuta care o sa iti aduca mereu zambetul pe buze, micile vietati care asteapta atentia ta se gasesc aici</p>
+                        <a href="#" class="btn-default btn2">View All</a>
+                    </article>
+                    <article class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="thumb-pad1">
+                            <div class="thumbnail">
+                                <figure><img src="img/page1_pic2.jpg" alt=""></figure>
+                                <div class="caption">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="thumb-pad1">
+                            <div class="thumbnail">
+                                <figure><img src="img/page1_pic3.jpg" alt=""></figure>
+                                <div class="caption">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="thumb-pad1">
+                            <div class="thumbnail">
+                                <figure><img src="img/page1_pic4.jpg" alt=""></figure>
+                                <div class="caption">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="thumb-pad1">
+                            <div class="thumbnail">
+                                <figure><img src="img/page1_pic5.jpg" alt=""></figure>
+                                <div class="caption">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="thumb-pad1">
+                            <div class="thumbnail">
+                                <figure><img src="img/page1_pic6.jpg" alt=""></figure>
+                                <div class="caption">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="thumb-pad1">
+                            <div class="thumbnail">
+                                <figure><img src="img/page1_pic7.jpg" alt=""></figure>
+                                <div class="caption">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        </div>
+<!--footer-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="box1">
+                <article class="col-lg-3 col-md-3 col-sm-4">
+                    <div class="box2 maxheight2">
+                        <h3>Despre noi</h3>
+                        <p>Suntem o echipa formata din oameni care iubesc animalele, in special pisicile si care incearca sa ajute stapanii pentru a le oferi cel mai bun trai si toata afectiunea lor, dar totodata si o echipa care incearca sa gaseasca un camin pentru pisicutele care inca nu au fost cele mai norocoase</p>
+                    </div>
+                    <h3>Contacte</h3>
+                    <p>Telefon: +40 726023152<br>E-mail: <a href="#">mail@demolink.org</a></p>
+                </article>
+                <article class="col-lg-2 col-md-2 col-sm-4">
+                    <h3>Unde ne gasiti</h3>
+                    <p>Bvd. Vasile Parvan, nr. 2<br>Timisoara, Romania</p>
+                </article>
+                <article class="col-lg-2 col-md-2 col-sm-4">
+                    <h3>Servicii</h3>
+                    <ul class="list0">
+                        <li><a href="#">Pareri</a></li>
+                        <li><a href="#">Recomandari</a></li>
+                        <li><a href="#">Adoptie</a></li>
+                        <li><a href="#">Medicina veterinara</a></li>
+                        <li><a href="#">Nutritie</a></li>
+                        <li><a href="#">Adapost</a></li>
+                    </ul>
+                </article>
+                <article class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="box3">
+                        <h3>Contact Rapid</h3>
+                        <form id="contact-form2">
+                            <div class="success-message">Formularul a fost trimis.</div>
+                            <div class="holder">
+                                <div class="form-div-1 clearfix">
+                                    <label class="name">
+                                        <input type="text" placeholder="Name:" data-constraints="@Required @JustLetters" />
+                                        <span class="empty-message">*Campul este obligatoriu.</span>
+                                        <span class="error-message">*Acesta nu este un nume valid.</span>
+                                    </label>
+                                </div>
+                                <div class="form-div-2 clearfix">
+                                    <label class="email">
+                                        <input type="text" placeholder="Email:" data-constraints="@Required @Email" />
+                                        <span class="empty-message">*Campul este obligatoriu.</span>
+                                        <span class="error-message">*Acesta nu este un email valid.</span>
+                                    </label>
+                                </div>
+                                <div class="form-div-3 clearfix">
+                                    <label class="phone notRequired">
+                                        <input type="text" placeholder="Phone:" data-constraints="@JustNumbers"/>
+                                        <span class="empty-message">*Campul este obligatoriu.</span>
+                                        <span class="error-message">*Acesta nu este un numar de telefon valid.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-div-4 clearfix">
+                                <label class="message">
+                                    <textarea placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                                    <span class="empty-message">*Campul este obligatoriu.</span>
+                                    <span class="error-message">*Mesajul este prea scurt.</span>
+                                </label>
+                            </div>
+                            <div class="btns1">
+                                <a href="#" data-type="submit" class="btn-default btn2">Trimite</a>
+                                <a href="#" data-type="reset" class="btn-default btn2">Sterge</a>
+                            </div>  
+                        </form>
+                    </div>
+                </article>
+                <article class="col-lg-2 col-md-2 col-sm-4">
+                    <div class="searchBox">
+                        <form action="https://www.google.com/search" class="search-bar" method="get">
+                            <input type="text" placeholder="Cautati orice:" name="q">
+                            <button type="submit"><img src="img/search.png"></button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <article class="col-lg-12 box4">
+                <p class="priv"><img src="img/foo_logo.png" alt=""> <span>&copy; <em id="copyright-year"></em> <a href="index-5.html">Privacy policy</a></span></p>
+                <ul class="follow_icon">
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-google-plus"></a></li>
+                </ul>
+            </article>
+        </div>
+    </div>
+<!-- {%FOOTER_LINK} -->
+</footer>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/tm-scripts.js"></script>
+<script>
+    if($.browser.msie && $.browser.version == 8){    
+        
+    }
+</script>
+
+<section>
+
+</section>
+<a class="gotopbtn" href="#"> <i class="fa fa-arrow-up"></i> </a>
+<a class="help" onclick="doSomething()"> <i class="fa fa-question"></i> </a>
+<a id="test">Aveti nevoie de ajutor?</a>
+<script>
+    function doSomething()
+    {
+        document.getElementById("test").innerHTML = "Pentru mai multe informatii, va rugam sa ne contactati";
+    }
+</script>
+
+</body>
+</html>
